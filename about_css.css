@@ -1,0 +1,225 @@
+/* General styling and reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    background-image: url('bgpizza.jfif'); /* Same background as previous pages */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* Header Styles */
+header {
+    background-color: #e74c3c;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+	text-align: center;
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+}
+
+/* Main Heading */
+h1 {
+    font-size: 2.5em;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	text-align: center;
+}
+
+/* About Us Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* White background with some transparency */
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-section h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #e3170a; /* Same red as the header */
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #e3170a;
+}
+
+.about-section ul {
+    list-style: none;
+    text-align: left;
+    margin: 20px 0;
+    padding-left: 0;
+}
+
+.about-section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.about-section ul li strong {
+    color: #ff8c00; /* Orange text for key values */
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    font-size: 16px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 50px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex-basis: 22%;
+    margin-bottom: 20px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+}
+
+.footer-section p, .footer-section a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-bottom {
+    background-color: #222;
+    padding: 20px 0;
+    color: #aaa;
+    font-size: 14px;
+    border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+/* Go Back Button */
+.back-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.back-button button {
+    background-color: #e3170a; /* Pizza Hut Red */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button button:hover {
+    background-color: #ba1500; /* Darker red on hover */
+}

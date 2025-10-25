@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online - Pizza Hut</title>
+    <link rel="stylesheet" href="order_css.css">
+</head>
+<body>
+
+    <!-- Header Section with Background Image -->
+    <header class="header">
+        <h1>Pizza Hut</h1>
+        <nav>
+            <ul>
+                <li><a href="pizza_html.html">Home</a></li>
+                <li><a href="menu_html.html">Menu</a></li>
+                <li><a href="order.html">Order Online</a></li>
+		        <li><a href="bill.html">Bill Details</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+           	    <li><a href="about.html">About Us</a></li>  
+	   </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Order Online</h1>
+        <form method="POST" action="process_order.asp">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="address">Delivery Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <!-- Checkbox Selection for Pizzas -->
+            <h3>Select Your Pizzas</h3>
+
+            <div class="pizza-selection">
+                <input type="checkbox" id="pepperoni" name="pizza" value="Pepperoni" data-price="10" onchange="toggleQuantity('pepperoni')">
+                <label for="pepperoni">Pepperoni Pizza - $10</label>
+                <input type="number" id="quantity_pepperoni" name="quantity_pepperoni" class="pizzaQuantity" min="1" value="1" disabled onchange="updateTotalPrice()">
+
+                <br>
+
+                <input type="checkbox" id="cheese" name="pizza" value="Cheese" data-price="8" onchange="toggleQuantity('cheese')">
+                <label for="cheese">Cheese Pizza - $8</label>
+                <input type="number" id="quantity_cheese" name="quantity_cheese" class="pizzaQuantity" min="1" value="1" disabled onchange="updateTotalPrice()">
+
+                <br>
+
+                <input type="checkbox" id="veggie" name="pizza" value="Veggie" data-price="9" onchange="toggleQuantity('veggie')">
+                <label for="veggie">Veggie Pizza - $9</label>
+                <input type="number" id="quantity_veggie" name="quantity_veggie" class="pizzaQuantity" min="1" value="1" disabled onchange="updateTotalPrice()">
+
+                <br>
+
+                <input type="checkbox" id="chicken" name="pizza" value="Chicken" data-price="12" onchange="toggleQuantity('chicken')">
+                <label for="chicken">Chicken Pizza - $12</label>
+                <input type="number" id="quantity_chicken" name="quantity_chicken" class="pizzaQuantity" min="1" value="1" disabled onchange="updateTotalPrice()">
+            </div>
+		
+            <div class="total">
+                Total Price: $<span id="totalPrice">0</span>
+            </div>
+
+            <button type="submit">Place Order</button>
+        </form>
+
+        <!-- Back Button -->
+        <button onclick="goBack()">Go Back</button>
+
+        <script>
+        // Toggle the quantity input when a checkbox is checked or unchecked
+        function    1 toggleQuantity(pizza) {
+            const quantityInput = document.getElementById('quantity_' + pizza);
+            if (document.getElementById(pizza).checked) {
+                quantityInput.disabled = false;
+                quantityInput.value = 1;  // Set default quantity to 1
+            } else {
+                quantityInput.disabled = true;
+                quantityInput.value = 0;  // Set quantity to 0 if unchecked
+            }
+            updateTotalPrice();
+        }
+
+        // Update the total price based on selected pizzas and quantities
+        function updateTotalPrice() {
+            let totalPrice = 0;
+
+            const pizzas = [
+                { id: 'pepperoni', price: 10 },
+                { id: 'cheese', price: 8 },
+                { id: 'veggie', price: 9 },
+                { id: 'chicken', price: 12 }
+            ];
+
+            pizzas.forEach(pizza => {
+                const checkbox = document.getElementById(pizza.id);
+                const quantity = document.getElementById('quantity_' + pizza.id).value;
+                
+                if (checkbox.checked) {
+                    totalPrice += pizza.price * quantity;
+                }
+            });
+
+            document.getElementById('totalPrice').innerText = totalPrice;
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+        </script>
+    </div>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Pizza Hut</h4>
+            <p>Your favorite pizzas delivered fresh to your doorstep. We bring the best pizza experience straight to you!</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="pizza_html.html">Home</a></li>
+                <li><a href="menu_html.html">Menu</a></li>
+                <li><a href="order.html">Order Online</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>123 Pizza Street, Food City, Yummyland</p>
+            <p>Email: <a href="mailto:support@pizzahut.com">support@pizzahut.com</a></p>
+            <p>Phone: +1 (555) 123-4567</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/pizzahut"><img src="images/Facebook.png" alt="Facebook"></a>
+                <a href="https://twitter.com/pizzahut"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="https://www.instagram.com/pizzahut/"><img src="images/instagram.jfif" alt="Instagram"></a>
+                <a href="https://www.youtube.com/user/pizzahut"><img src="images/youtube.png" alt="YouTube"></a>
+
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2024 Pizza Hut. All Rights Reserved.</p>
+        <p>Privacy Policy | Terms of Service</p>
+    </div>
+</footer>
+
+</body>
+</html>
